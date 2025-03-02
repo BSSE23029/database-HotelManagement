@@ -1,0 +1,181 @@
+'use client';
+
+const staff = [
+  { id: 'STF-1001', name: 'Alice Johnson', role: 'Manager', status: 'Active' },
+  { id: 'STF-1002', name: 'Bob Smith', role: 'Receptionist', status: 'On Leave' },
+  { id: 'STF-1003', name: 'Charlie Brown', role: 'Housekeeping', status: 'Active' },
+];
+
+export function StaffList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Staff ID</th>
+            <th className="table-header-cell">Name</th>
+            <th className="table-header-cell">Role</th>
+            <th className="table-header-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {staff.map((member) => (
+            <tr key={member.id} className="table-row">
+              <td className="table-cell">{member.id}</td>
+              <td className="table-cell">{member.name}</td>
+              <td className="table-cell">{member.role}</td>
+              <td className="table-cell">{member.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function StaffFilters() {
+  return (
+    <div className="card">
+      <h2 className="text-lg font-medium mb-4">Filter Staff</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="form-label">Role</label>
+          <select className="form-input">
+            <option value="all">All Roles</option>
+            <option value="Manager">Manager</option>
+            <option value="Receptionist">Receptionist</option>
+            <option value="Housekeeping">Housekeeping</option>
+          </select>
+        </div>
+        <div>
+          <label className="form-label">Status</label>
+          <select className="form-input">
+            <option value="all">All Statuses</option>
+            <option value="Active">Active</option>
+            <option value="On Leave">On Leave</option>
+          </select>
+        </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <button type="button" className="btn-primary">Apply Filters</button>
+      </div>
+    </div>
+  );
+}
+
+const reports = [
+  { id: 'RPT-1001', title: 'Monthly Revenue', date: '2023-09-01', status: 'Completed' },
+  { id: 'RPT-1002', title: 'Guest Feedback', date: '2023-09-10', status: 'Pending' },
+  { id: 'RPT-1003', title: 'Maintenance Costs', date: '2023-09-15', status: 'Completed' },
+];
+
+export function ReportsList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Report ID</th>
+            <th className="table-header-cell">Title</th>
+            <th className="table-header-cell">Date</th>
+            <th className="table-header-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {reports.map((report) => (
+            <tr key={report.id} className="table-row">
+              <td className="table-cell">{report.id}</td>
+              <td className="table-cell">{report.title}</td>
+              <td className="table-cell">{report.date}</td>
+              <td className="table-cell">{report.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function ReportsFilters() {
+  return (
+    <div className="card">
+      <h2 className="text-lg font-medium mb-4">Filter Reports</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="form-label">Status</label>
+          <select className="form-input">
+            <option value="all">All Statuses</option>
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <button type="button" className="btn-primary">Apply Filters</button>
+      </div>
+    </div>
+  );
+}
+
+const settings = [
+  { id: 'SET-1001', name: 'Site Title', value: 'Hotel Management System' },
+  { id: 'SET-1002', name: 'Timezone', value: 'UTC-5' },
+  { id: 'SET-1003', name: 'Currency', value: 'USD' },
+];
+
+export function SettingsList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Setting ID</th>
+            <th className="table-header-cell">Name</th>
+            <th className="table-header-cell">Value</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {settings.map((setting) => (
+            <tr key={setting.id} className="table-row">
+              <td className="table-cell">{setting.id}</td>
+              <td className="table-cell">{setting.name}</td>
+              <td className="table-cell">{setting.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+const security = [
+  { id: 'SEC-1001', name: 'Two-Factor Authentication', status: 'Enabled' },
+  { id: 'SEC-1002', name: 'Firewall Protection', status: 'Active' },
+  { id: 'SEC-1003', name: 'Login Attempts', status: 'Limited' },
+];
+
+export function SecurityList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Security ID</th>
+            <th className="table-header-cell">Name</th>
+            <th className="table-header-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {security.map((item) => (
+            <tr key={item.id} className="table-row">
+              <td className="table-cell">{item.id}</td>
+              <td className="table-cell">{item.name}</td>
+              <td className="table-cell">{item.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+

@@ -1,0 +1,130 @@
+'use client';
+
+const services = [
+  { id: 'SVC-1001', name: 'Room Cleaning', category: 'Housekeeping', price: '$30', status: 'Available' },
+  { id: 'SVC-1002', name: 'Spa Session', category: 'Wellness', price: '$100', status: 'Booked' },
+  { id: 'SVC-1003', name: 'Airport Pickup', category: 'Transport', price: '$50', status: 'Available' },
+];
+
+export function ServicesList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Service ID</th>
+            <th className="table-header-cell">Name</th>
+            <th className="table-header-cell">Category</th>
+            <th className="table-header-cell">Price</th>
+            <th className="table-header-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {services.map((service) => (
+            <tr key={service.id} className="table-row">
+              <td className="table-cell">{service.id}</td>
+              <td className="table-cell">{service.name}</td>
+              <td className="table-cell">{service.category}</td>
+              <td className="table-cell">{service.price}</td>
+              <td className="table-cell">{service.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function ServicesFilters() {
+  return (
+    <div className="card">
+      <h2 className="text-lg font-medium mb-4">Filter Services</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="form-label">Category</label>
+          <select className="form-input">
+            <option value="all">All Categories</option>
+            <option value="Housekeeping">Housekeeping</option>
+            <option value="Wellness">Wellness</option>
+            <option value="Transport">Transport</option>
+          </select>
+        </div>
+        <div>
+          <label className="form-label">Status</label>
+          <select className="form-input">
+            <option value="all">All Statuses</option>
+            <option value="Available">Available</option>
+            <option value="Booked">Booked</option>
+          </select>
+        </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <button type="button" className="btn-primary">Apply Filters</button>
+      </div>
+    </div>
+  );
+}
+
+const inventory = [
+  { id: 'INV-1001', name: 'Bedsheets', category: 'Linen', quantity: 50, status: 'In Stock' },
+  { id: 'INV-1002', name: 'Shampoo Bottles', category: 'Toiletries', quantity: 200, status: 'Low Stock' },
+  { id: 'INV-1003', name: 'Towels', category: 'Linen', quantity: 30, status: 'In Stock' },
+];
+
+export function InventoryList() {
+  return (
+    <div className="table-container">
+      <table className="table">
+        <thead className="table-header">
+          <tr>
+            <th className="table-header-cell">Item ID</th>
+            <th className="table-header-cell">Name</th>
+            <th className="table-header-cell">Category</th>
+            <th className="table-header-cell">Quantity</th>
+            <th className="table-header-cell">Status</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          {inventory.map((item) => (
+            <tr key={item.id} className="table-row">
+              <td className="table-cell">{item.id}</td>
+              <td className="table-cell">{item.name}</td>
+              <td className="table-cell">{item.category}</td>
+              <td className="table-cell">{item.quantity}</td>
+              <td className="table-cell">{item.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function InventoryFilters() {
+  return (
+    <div className="card">
+      <h2 className="text-lg font-medium mb-4">Filter Inventory</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="form-label">Category</label>
+          <select className="form-input">
+            <option value="all">All Categories</option>
+            <option value="Linen">Linen</option>
+            <option value="Toiletries">Toiletries</option>
+          </select>
+        </div>
+        <div>
+          <label className="form-label">Status</label>
+          <select className="form-input">
+            <option value="all">All Statuses</option>
+            <option value="In Stock">In Stock</option>
+            <option value="Low Stock">Low Stock</option>
+          </select>
+        </div>
+      </div>
+      <div className="mt-4 flex justify-end">
+        <button type="button" className="btn-primary">Apply Filters</button>
+      </div>
+    </div>
+  );
+}

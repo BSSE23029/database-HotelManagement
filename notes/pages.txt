@@ -1,0 +1,62 @@
+export function ServicesPage() {
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-semibold text-gray-800">Services</h1>
+        <a href="/services/new" className="btn-primary">Add New Service</a>
+      </div>
+      <div className="card">Service list goes here</div>
+    </div>
+  );
+}
+
+export function InventoryPage() {
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-semibold text-gray-800">Inventory</h1>
+        <a href="/inventory/new" className="btn-primary">Add New Item</a>
+      </div>
+      <div className="card">Inventory list goes here</div>
+    </div>
+  );
+}
+
+export function StaffPage() {
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-semibold text-gray-800">Staff</h1>
+        <a href="/staff/new" className="btn-primary">Add New Staff</a>
+      </div>
+      <div className="card">Staff list goes here</div>
+    </div>
+  );
+}
+
+export function ReportsPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold text-gray-800">Reports</h1>
+      <div className="card">Report data goes here</div>
+    </div>
+  );
+}
+
+export function SettingsPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold text-gray-800">Settings</h1>
+      <div className="card">Settings options go here</div>
+    </div>
+  );
+}
+
+export function SecurityPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold text-gray-800">Security</h1>
+      <div className="card">Security settings go here</div>
+    </div>
+  );
+}
